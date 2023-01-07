@@ -1,0 +1,174 @@
+:root{
+    --dark-blue-clr: hsl(238, 29%, 16%);
+    --red-clr: hsl(14, 88%, 65%);
+    --blue-clr: hsl(240, 73%, 65%);
+    --violet-clr: hsl(273, 75%, 66%);
+    --neutral-1000-clr: hsl(0, 0%, 0);
+    --neutral-800-clr: hsl(237, 12%, 33%);
+    --neutral-700-clr: hsl(240, 6%, 50%);
+    --neutral-100-clr: hsl(240, 5%, 91%);
+    --neutral-0-clr: hsl(0, 0%, 100%);
+
+    --accent-font: 'Kumbh Sans', sans-serif;
+}
+
+
+/* GENERAL */
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--accent-font);
+    font-size: 12px;
+    background: linear-gradient(var(--violet-clr), var(--blue-clr));
+    min-height: 90vh;
+}
+
+main{
+    min-height: 100vh;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* CARD */
+.card{
+    background-color: var(--neutral-0-clr);
+    width: 325px;
+    border-radius: 20px;
+    margin: 12em 0 5em 0;
+    padding: 0 0 4em 0;
+}
+
+.illustration-desktop{
+    display: none;
+}
+
+.illustration-mobile{
+    max-width: 250px;
+    display: block;
+    position: relative;
+    margin: -7rem auto 0 auto;
+}
+
+.shadow-mobile{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.faq{
+    text-align: center;
+    margin: 1.5em 0 0.25em 0;
+    font-size: 2rem;
+}
+
+.card button{
+    cursor: pointer;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+    padding: 1.25em;
+    background-color: var(--neutral-0-clr);
+    font-family: var(--accent-font);
+    color: var(--neutral-800-clr);
+}
+
+.card button:hover{
+    color: var(--red-clr);
+}
+
+.card p{
+    max-width: 90%;
+    padding: 0 1.5em 1.5em 1.5em;
+    color: var(--neutral-700-clr);
+    display: none;
+}
+
+.divider{
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: var(--neutral-100-clr);
+    height: 1px;
+    border: none;
+}
+
+.active button{
+    font-weight: 700;
+}
+
+.active button:hover{
+    color: var(--neutral-800-clr);
+}
+
+.active img{
+    transform: rotate(180deg);
+}
+
+.active p{
+    display: block;
+}
+
+
+@media(min-width: 900px){
+    .column{
+        justify-content: center;
+    }
+
+    .card{
+        width: 850px;
+        padding: 0 0 3em 0;
+        margin: 5em 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .illustration-mobile{
+        display: none;
+    }
+
+    .illustration-desktop{
+        display: block;
+        max-width: 400px;
+        margin: 2em 10em 0 -10em;
+        height: fit-content;
+    }
+
+    .shadow-desktop{
+        position: absolute;
+        left: 7%;
+    }
+
+    .illustration-box{
+        position: absolute;
+        left: 7%;
+        top: 40%;
+        width: 120px;
+    }
+
+    .info{
+        width: 40%;
+        min-height: 450px;
+    }
+
+    .faq{
+        text-align: left;
+    }
+
+    .card button{
+        padding: 1.5em 1.5em 1.5em 0;
+    }
+}
